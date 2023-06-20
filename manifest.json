@@ -1,6 +1,6 @@
 {
 	"name": "Tab Killer",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Kills given tab after idle timeout",
 	"manifest_version": 3,
 	"author": "Tristan Dobrowolski",
@@ -11,11 +11,11 @@
 		"storage"
 	],
 	"background": {
-		"service_worker": "background.js",
+		"service_worker": "src/service_worker/service_worker.js",
 		"type": "module"
 	},
 	"options_ui": {
-		"page": "options.html",
+		"page": "src/options/options.html",
 		"open_in_tab": false
 	}
 }

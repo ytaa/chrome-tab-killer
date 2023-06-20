@@ -1,7 +1,7 @@
-import { default_idle_time, default_idle_time_min, default_idle_time_max, default_idle_time_is_random, defualt_tab_title } from "./defaults.js";
+import { default_idle_time, default_idle_time_min, default_idle_time_max, default_idle_time_is_random, defualt_tab_title } from "../defaults/defaults.js";
 
 const validateIdleTime = (elementId) => {
-	var time = document.getElementById(elementId).value;
+	var time = Number(document.getElementById(elementId).value);
 	if(time < 15){
 		time = 15;
 		document.getElementById(elementId).value = 15;
@@ -20,6 +20,7 @@ const saveOptions = () => {
 
 	// Check if max idle time is not lower than min idle time
 	if(idle_time_max < idle_time_min){
+		console.log("FIX", idle_time_max, idle_time_min );
 		idle_time_max = idle_time_min;
 		document.getElementById('idle_time_max').value = idle_time_max;
 	}
@@ -56,10 +57,12 @@ const restoreOptions = () => {
 		},
 		(items) => {
 			document.getElementById('tab_title').value = items.tab_title;
-			document.getElementById('idle_time_is_random').value = items.idle_time_is_random;
+			document.getElementById('idle_time_is_random').checked = items.idle_time_is_random;
 			document.getElementById('idle_time').value = items.idle_time;
 			document.getElementById('idle_time_min').value = items.idle_time_min;
 			document.getElementById('idle_time_max').value = items.idle_time_max;
+
+			idleTimeIsRandomOnChange();
 		}
 	);
 };
