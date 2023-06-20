@@ -13,10 +13,16 @@ const validateIdleTime = (elementId) => {
 const saveOptions = () => {
 	const idle_time = validateIdleTime('idle_time');
 	const idle_time_min = validateIdleTime('idle_time_min');
-	const idle_time_max = validateIdleTime('idle_time_max');
+	var idle_time_max = validateIdleTime('idle_time_max');
 	const idle_time_is_random = document.getElementById('idle_time_is_random').checked;
 
 	const tab_title = document.getElementById('tab_title').value;
+
+	// Check if max idle time is not lower than min idle time
+	if(idle_time_max < idle_time_min){
+		idle_time_max = idle_time_min;
+		document.getElementById('idle_time_max').value = idle_time_max;
+	}
 
 	chrome.storage.local.set(
 		{ 
