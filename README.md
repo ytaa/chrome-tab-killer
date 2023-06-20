@@ -1,6 +1,13 @@
 # chrome-tab-killer
 Google Chrome extension closing selected tabs when user is idle.
 
+## Installation
+1. Download this repository as a [ZIP file from GitHub](https://github.com/ytaa/chrome-tab-killer/archive/refs/heads/main.zip).
+1. Unzip the file and you should have a folder named `chrome-tab-killer`.
+1. Go to the extensions page in your borwser (eg. `chrome://extensions` in Google Chrome or `edge://extensions` in Edge).
+1. Enable Developer Mode.
+1. Drag the `chrome-tab-killer` folder anywhere on the page to import it (do not delete the folder afterwards).
+
 ## Options
 This extension currently supports the following options:
 
