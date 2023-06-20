@@ -1,9 +1,9 @@
 {
-    "name": "Tab Killer",
-    "version": "1.0.2",
-    "description": "Kills given tab after idle timeout",
-    "manifest_version": 3,
-    "author": "Tristan Dobrowolski",
+	"name": "Tab Killer",
+	"version": "1.0.2",
+	"description": "Kills given tab after idle timeout",
+	"manifest_version": 3,
+	"author": "Tristan Dobrowolski",
 	"minimum_chrome_version": "92",
 	"permissions": [
 		"idle",
@@ -11,11 +11,11 @@
 		"storage"
 	],
 	"background": {
-        "service_worker": "background.js",
+		"service_worker": "background.js",
 		"type": "module"
-    },
+	},
 	"options_ui": {
 		"page": "options.html",
 		"open_in_tab": false
-    }
+	}
 }
