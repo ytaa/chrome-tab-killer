@@ -10,14 +10,26 @@
         <h2 class="text-center">Tab Killer Options</h2>
         <table class="table table-bordered">
             <tbody>
-            <tr>
-                <td>Idle time [sec]</td>
-                <td><input type="number" id="idle_time" name="idle_time" min="15"/></td>
-            </tr>
-			<tr>
-                <td>Tab title</td>
-                <td><input type="text" id="tab_title" name="tab_title"/></td>
-            </tr>
+                <tr>
+                    <td>Tab title</td>
+                    <td><input type="text" id="tab_title" name="tab_title"/></td>
+                </tr>
+                <tr>
+                    <td>Random idle time</td>
+                    <td><input type="checkbox" id="idle_time_is_random" name="idle_time_is_random" /></td>
+                </tr>
+                <tr id="idle_time_tr">
+                    <td>Idle time [sec]</td>
+                    <td><input type="number" id="idle_time" name="idle_time" min="15"/></td>
+                </tr>
+                <tr id="idle_time_min_tr" hidden>
+                    <td>Idle time min [sec]</td>
+                    <td><input type="number" id="idle_time_min" name="idle_time_min" min="15"/></td>
+                </tr>
+                <tr id="idle_time_max_tr" hidden>
+                    <td>Idle time max [sec]</td>
+                    <td><input type="number" id="idle_time_max" name="idle_time_max" min="15"/></td>
+                </tr>
             </tbody>
         </table>
 		<div id="status"></div>
