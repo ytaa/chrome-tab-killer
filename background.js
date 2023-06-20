@@ -63,10 +63,12 @@ function service_worker_init() {
 				// Computer is locked, or the user was inactive for given time
 				console.log("state: inactive")
 				
-				const [tab] = await chrome.tabs.query({ title: tab_title });
-				if(tab){
-					console.log("removing tab with id: ", tab.id);
-					chrome.tabs.remove(tab.id);
+				const tabs = await chrome.tabs.query({ title: tab_title });
+				if(tabs){
+					tabs.forEach((tab) => {
+						console.log(`removing tab {id: ${tab.id}, title: ${tab.title}}`);
+						chrome.tabs.remove(tab.id);
+					});
 				}
 
 				if(idle_time_is_random)
